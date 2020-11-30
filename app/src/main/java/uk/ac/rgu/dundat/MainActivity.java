@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import java.util.List;
 
@@ -13,16 +14,30 @@ import uk.ac.rgu.dundat.data.Guide;
 import uk.ac.rgu.dundat.data.GuideRepository;
 
 public class MainActivity extends AppCompatActivity {
+    // Debug tag
+//    private final String D_TAG = getString(R.string.d_tag);
+
+    // Keys for storing instance state
+    private final String KEY_LOCATION = "location";
+    private final String KEY_DATE = "date";
+    private final String KEY_MAXTEMP = "maxTemp";
+    private final String KEY_MINTEMP = "minTemp";
+    private final String KEY_WEATHER = "weather";
+
+    // Intent Extras
+    private static final String EXTRA_GUIDE_ID = "uk.ac.rgu.dundat.GUIDE_ID";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // get 2 guides for testing
+        // Get 2 Guides for testing
         List<Guide> guides = GuideRepository.getRepository(getApplicationContext()).getGuides();
         Log.d("CW1", String.valueOf(guides.size()));
 
+        // Set up RecyclerView with Adapter
         RecyclerView recyclerView = findViewById(R.id.rv_guideRecyclerView);
         RecyclerView.Adapter adapter = new GuideRecyclerViewAdapter(getApplicationContext(), guides);
         recyclerView.setAdapter(adapter);

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Dundat</string>
 
+    <string name="d_tag">"DUNDAT"</string>
+
     <string name="tv_listItemWPCount">%1$d waypoints</string>
     <string name="tv_listItemDistance">%1$s miles</string>
 

@@ -6,15 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuideRepository {
-
-    /**
-     * The Singleton instance for this repository
-     */
     private static GuideRepository INSTANCE;
-
-    /**
-     * The Context that the app is operating within
-     */
     private Context context;
 
     /**
@@ -42,8 +34,8 @@ public class GuideRepository {
      */
     private GuideRepository() {
         guides = new ArrayList<>();
-        Guide guide1 = new Guide("Stac Pollaidh", 5, 3.6);
-        Guide guide2 = new Guide("Lochnagar", 7, 6.2);
+        Guide guide1 = new Guide(1, "Stac Pollaidh", 5, 3.6);
+        Guide guide2 = new Guide(2, "Lochnagar", 7, 6.2);
         guides.add(guide1);
         guides.add(guide2);
     }
@@ -54,5 +46,17 @@ public class GuideRepository {
      */
     public List<Guide> getGuides(){
         return guides;
+    }
+
+    /**
+     * Returns {@link Guide} by ID
+     */
+    public Guide getGuideByID(int id) {
+        for (Guide guide : guides) {
+            if (guide.getId() == id) {
+                return guide;
+            }
+        }
+        return guides.get(0);
     }
 }

@@ -1,6 +1,7 @@
 package uk.ac.rgu.dundat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +16,14 @@ import java.util.List;
 import uk.ac.rgu.dundat.data.Guide;
 
 public class GuideRecyclerViewAdapter extends RecyclerView.Adapter<GuideRecyclerViewAdapter.GuideViewHolder> {
-
     // debug tag
     private final String TAG = "CW1";
     // the current context the adapter is working in
-    private Context context;
+    private final Context context;
     // the data to be displayed
     private List<Guide> guides;
+    // Intent extra keys
+    private final String EXTRA_ID = "id";
 
     /**
      * Creates a new {@link GuideRecyclerViewAdapter}.
@@ -55,7 +57,7 @@ public class GuideRecyclerViewAdapter extends RecyclerView.Adapter<GuideRecycler
 
         // get guide contents
         String title = guide.getTitle();
-        int wpCount = guide.getWPCount();
+        int wpCount = guide.getWpCount();
         double distance = guide.getDistance();
 
         // get Views in ViewHolder
@@ -96,6 +98,14 @@ public class GuideRecyclerViewAdapter extends RecyclerView.Adapter<GuideRecycler
             Guide guide = guides.get(position);
             // log
             Log.d(TAG, "Guide for " + guide.getTitle() + " clicked.");
+            launchGuideActivity(guide.getId());
+        }
+
+        private void launchGuideActivity(int id) {
+            Intent intent = new Intent(context, GuideActivity.class);
+            // Extras
+            intent.putExtra(EXTRA_ID, id);
+            context.startActivity(intent);
         }
     }
 }
