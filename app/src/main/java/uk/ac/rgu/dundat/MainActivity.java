@@ -15,7 +15,10 @@ import uk.ac.rgu.dundat.data.GuideRepository;
 
 public class MainActivity extends AppCompatActivity {
     // Debug tag
-//    private final String D_TAG = getString(R.string.d_tag);
+    private String dTag;
+
+    // RecyclerView
+    RecyclerView recyclerView;
 
     // Keys for storing instance state
     private final String KEY_LOCATION = "location";
@@ -33,12 +36,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.dTag = getString(R.string.d_tag);
+
         // Get 2 Guides for testing
         List<Guide> guides = GuideRepository.getRepository(getApplicationContext()).getGuides();
-        Log.d("CW1", String.valueOf(guides.size()));
+        Log.d(dTag, String.valueOf(guides.size()));
 
         // Set up RecyclerView with Adapter
-        RecyclerView recyclerView = findViewById(R.id.rv_guideRecyclerView);
+        recyclerView = findViewById(R.id.rv_guideRecyclerView);
         RecyclerView.Adapter adapter = new GuideRecyclerViewAdapter(getApplicationContext(), guides);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

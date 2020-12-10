@@ -38,4 +38,8 @@ public class Guide {
     public double getDistance() {
         return distance;
     }
+
+//    public void setWaypoints(ArrayList<Waypoint> waypoints) {
+//        this.waypoints = waypoints;
+//    }
 }

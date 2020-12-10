@@ -1,6 +1,7 @@
 package uk.ac.rgu.dundat.data;
 
 import android.content.Context;
+import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +35,12 @@ public class GuideRepository {
      */
     private GuideRepository() {
         guides = new ArrayList<>();
+        ArrayList<Waypoint> waypoints = new ArrayList<>();
+        waypoints.add(new Waypoint("Sycamore"));
+        waypoints.add(new Waypoint("Shitting spot"));
         Guide guide1 = new Guide(1, "Stac Pollaidh", 5, 3.6);
         Guide guide2 = new Guide(2, "Lochnagar", 7, 6.2);
+//        guide2.setWaypoints(waypoints);
         guides.add(guide1);
         guides.add(guide2);
     }

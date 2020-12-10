@@ -16,8 +16,8 @@ import java.util.List;
 import uk.ac.rgu.dundat.data.Guide;
 
 public class GuideRecyclerViewAdapter extends RecyclerView.Adapter<GuideRecyclerViewAdapter.GuideViewHolder> {
-    // debug tag
-    private final String TAG = "CW1";
+    // Debug tag
+    private final String D_TAG;
     // the current context the adapter is working in
     private final Context context;
     // the data to be displayed
@@ -33,16 +33,17 @@ public class GuideRecyclerViewAdapter extends RecyclerView.Adapter<GuideRecycler
     public GuideRecyclerViewAdapter(Context context, List<Guide> guides) {
         super();
         this.context = context;
+        this.D_TAG = context.getString(R.string.d_tag);
         this.guides = guides;
 
-        Log.d(TAG, "Adapter created.");
-        Log.d(TAG, String.valueOf(getItemCount()));
+        Log.d(D_TAG, "Adapter created.");
+        Log.d(D_TAG, String.valueOf(getItemCount()));
     }
 
     @NonNull
     @Override
     public GuideViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.d(TAG, "Creating ViewHolder.");
+        Log.d(D_TAG, "Creating ViewHolder.");
         View itemView = LayoutInflater.from(context).inflate(R.layout.guide_list_item_view, parent, false);
         GuideViewHolder viewHolder = new GuideViewHolder(itemView, this);
         return viewHolder;
@@ -50,7 +51,7 @@ public class GuideRecyclerViewAdapter extends RecyclerView.Adapter<GuideRecycler
 
     @Override
     public void onBindViewHolder(@NonNull GuideViewHolder holder, int position) {
-        Log.d(TAG, "Binding ViewHolder.");
+        Log.d(D_TAG, "Binding ViewHolder.");
 
         // get guide
         Guide guide = guides.get(position);
@@ -92,19 +93,20 @@ public class GuideRecyclerViewAdapter extends RecyclerView.Adapter<GuideRecycler
 
         @Override
         public void onClick(View v) {
-            // get position of list item that was clicked
+            // Get context from View
+            Context context = v.getContext();
+            // Get position of list item that was clicked
             int position = getAdapterPosition();
-            // get Guide corresponding to position
+            // Get Guide corresponding to position
             Guide guide = guides.get(position);
-            // log
-            Log.d(TAG, "Guide for " + guide.getTitle() + " clicked.");
-            launchGuideActivity(guide.getId());
+            launchGuideActivity(context, guide.getId());
         }
 
-        private void launchGuideActivity(int id) {
+        private void launchGuideActivity(Context context, int id) {
             Intent intent = new Intent(context, GuideActivity.class);
             // Extras
             intent.putExtra(EXTRA_ID, id);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
     }

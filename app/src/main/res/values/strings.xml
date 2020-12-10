@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Dundat</string>
 
-    <string name="d_tag">"DUNDAT"</string>
+    <string name="d_tag">"DEBUG"</string>
 
     <string name="tv_listItemWPCount">%1$d waypoints</string>
     <string name="tv_listItemDistance">%1$s miles</string>
@@ -13,18 +13,18 @@
     <string name="tv_listItem_static_wpCount2">7 waypoints</string>
     <string name="tv_listItem_static_wpCount">5 waypoints</string>
 
-    <string name="tv_guideView_wpCount">5 waypoints</string>
-    <string name="tv_guideView_distance">5.6 miles</string>
+    <string name="tv_guideView_wpCount">%1$s waypoints</string>
+    <string name="tv_guideView_distance">%1$s miles</string>
     <string name="tv_guideView_wpPrevious_header">Previous waypoints:</string>
-    <string name="btn_guideView_wpPrevious">Waypoint 1</string>
     <string name="tv_guideView_wpNext_header">Next waypoint:</string>
     <string name="tv_guideView_wpNext_distance">1.2 miles away</string>
-    <string name="btn_guideView_wpNext">View in Google Maps</string>
+    <string name="btn_guideView_map">Show On Map</string>
+    <string name="btn_guideView_secret">Show Secret</string>
     <string name="tv_guideView_title">Stac Pollaidh</string>
 
-    <string name="tv_guideMessage_message">\"Facing the cairn, look to your left and descend the faint track for about 100 yards. You will find a spot beneath a rock outcropping sheltered from the wind to enjoy a quick snack.\"</string>
-    <string name="btn_guideMessage_share">View in Google Maps</string>
-    <string name="tv_guideMessage_title">Waypoint 1</string>
+    <string name="tv_secret_title">Waypoint 1</string>
+    <string name="tv_secret_message">\"Facing the cairn, look to your left and descend the faint track for about 100 yards. You will find a spot beneath a rock outcropping sheltered from the wind to enjoy a quick snack.\"</string>
+    <string name="btn_secret_share">View in Google Maps</string>
 
 
 </resources>
