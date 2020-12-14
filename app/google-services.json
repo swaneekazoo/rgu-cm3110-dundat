@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "812705590285",
+    "firebase_url": "https://cm3110.firebaseio.com",
+    "project_id": "cm3110",
+    "storage_bucket": "cm3110.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812705590285:android:f200d1d4bae2382acd7944",
+        "android_client_info": {
+          "package_name": "uk.ac.rgu.dundat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLQyrLfzIo1fTaIMvSa8NmBb-SGvGhT08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

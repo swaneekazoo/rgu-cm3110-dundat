@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Sonian Forest",
+    "waypoints": [
+      {
+        "latitude": 50.816561,
+        "longitude": 4.371625,
+        "secret": "Sup fam",
+        "name": "Legrand"
+      },
+      {
+        "latitude": 50.795714,
+        "longitude": 4.412971,
+        "secret": "The tram leaves every 15 minutes.",
+        "name": "Delleur"
+      }
+    ]
+  },
+  {
+    "title": "Foggieton",
+    "waypoints": [
+      {
+        "latitude": 50.816561,
+        "longitude": 4.371625,
+        "secret": "Sup fam",
+        "name": "Legrand"
+      },
+      {
+        "latitude": 50.795714,
+        "longitude": 4.412971,
+        "secret": "The tram leaves every 15 minutes.",
+        "name": "Delleur"
+      }
+    ]
+  },
+  {
+  "title": "Hidden Loch",
+    "waypoints": [
+      {
+        "latitude": 50.816561,
+        "longitude": 4.371625,
+        "secret": "Sup fam",
+        "name": "Legrand"
+      },
+      {
+        "latitude": 50.795714,
+        "longitude": 4.412971,
+        "secret": "The tram leaves every 15 minutes.",
+        "name": "Delleur"
+      }
+    ]
+  }
+]

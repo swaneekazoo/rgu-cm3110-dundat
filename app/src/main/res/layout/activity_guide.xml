@@ -6,45 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".GuideActivity">
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
+    <fragment
+        android:id="@+id/frag_guide_map"
+        class="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintDimensionRatio="1.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_guideView_title"
+        android:id="@+id/tv_guide_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/design_default_color_primary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapView"
+        app:layout_constraintTop_toBottomOf="@+id/frag_guide_map"
         tools:text="Lochnagar" />
 
     <TextView
-        android:id="@+id/tv_guideView_waypoints"
+        android:id="@+id/tv_guide_waypoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/tv_guideView_title"
-        app:layout_constraintTop_toBottomOf="@+id/tv_guideView_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_guide_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_guide_title"
         tools:text="5 waypoints" />
 
     <TextView
-        android:id="@+id/tv_guideView_distance"
+        android:id="@+id/tv_guide_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapView"
+        app:layout_constraintTop_toBottomOf="@+id/frag_guide_map"
         tools:text="15 miles" />
 
     <View
@@ -55,7 +56,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_guideView_waypoints" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_guide_waypoints" />
 
     <TextView
         android:id="@+id/tv_guideView_nextWP"
@@ -64,7 +65,7 @@
         android:background="@android:drawable/screen_background_light"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:text="Next waypoint"
+        android:text="@string/tv_guide_next_header"
         app:layout_constraintBottom_toBottomOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -72,76 +73,55 @@
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <TextView
-        android:id="@+id/tv_guideView_nextWP_name"
+        android:id="@+id/tv_guide_wpNext_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Cool sycamore"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/design_default_color_on_secondary"
-        app:layout_constraintStart_toStartOf="@+id/tv_guideView_title"
-        app:layout_constraintTop_toBottomOf="@+id/tv_guideView_nextWP" />
+        app:layout_constraintStart_toStartOf="@+id/tv_guide_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_guideView_nextWP"
+        tools:text="Cool sycamore" />
 
     <Button
-        android:id="@+id/btn_guideView_map"
+        android:id="@+id/btn_guide_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/btn_guideView_map"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_guideView_nextWP_dist"
+        android:text="@string/btn_guide_map"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_guide_wpNext_distance"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_guideView_nextWP_name" />
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="24dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_guideView_map" />
+        app:layout_constraintTop_toTopOf="@+id/tv_guide_wpNext_name" />
 
     <TextView
-        android:id="@+id/tv_guideView_prevWP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/screen_background_light"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="Previous waypoints"
-        app:layout_constraintBottom_toBottomOf="@+id/divider2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider2" />
-
-    <TextView
-        android:id="@+id/tv_guideView_nextWP_dist"
+        android:id="@+id/tv_guide_wpNext_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1.5 miles away"
-        app:layout_constraintStart_toStartOf="@+id/tv_guideView_nextWP_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_guideView_nextWP_name" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_guide_secret"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_guideView_prevWP" />
+        app:layout_constraintStart_toStartOf="@+id/tv_guide_wpNext_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_guide_wpNext_name" />
 
     <Button
         android:id="@+id/btn_guide_secret"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/btn_guideView_secret"
+        android:text="@string/btn_guide_secret"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_guideView_prevWP" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_guide_map" />
+
+    <Button
+        android:id="@+id/btn_guide_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/btn_guide_delete"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,14 +11,17 @@ import java.util.List;
 @Dao
 public interface GuideDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Guide g);
+    void insert(Guide... g);
 
     @Delete
-    void delete(Guide g);
+    void delete(Guide... g);
 
-    @Query("SELECT * FROM guide ORDER BY title asc")
-    List<Guide> getAll();
+    @Query("SELECT * FROM guide ORDER BY title ASC")
+    List<Guide> getAllDesc();
 
-//    @Query("SELECT * FROM guide WHERE id is id")
-//    public Guide findByID(int id);
+    @Query("SELECT * FROM guide ORDER BY title DESC")
+    List<Guide> getAllAsc();
+
+    @Query("SELECT * FROM guide WHERE title is :title")
+    Guide findByTitle(String title);
 }

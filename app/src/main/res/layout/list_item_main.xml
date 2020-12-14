@@ -5,44 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="96dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_listItem_static_wpCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_listItemWPCount"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_listItem_static_title2"
-            app:layout_constraintTop_toBottomOf="@+id/tv_listItem_static_title2"
-            tools:text="5 waypoints" />
-
-        <TextView
-            android:id="@+id/tv_listItem_static_title2"
+            android:id="@+id/tv_list_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/design_default_color_primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             tools:text="Lochnagar" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_list_wpCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="5 waypoints" />
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_listItem_static_distance2"
+        android:id="@+id/tv_list_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/tv_listItemDistance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

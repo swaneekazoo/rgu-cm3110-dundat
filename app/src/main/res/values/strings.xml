@@ -1,30 +1,39 @@
 <resources>
     <string name="app_name">Dundat</string>
 
-    <string name="d_tag">"DEBUG"</string>
+    <!--    Debug tag-->
+    <string name="D_TAG">"DEBUG"</string>
 
-    <string name="tv_listItemWPCount">%1$d waypoints</string>
-    <string name="tv_listItemDistance">%1$s miles</string>
+<!--    SharedPreferences file name-->
+    <string name="SHARED_PREF_FILE_NAME">uk.ac.rgu.dundat</string>
+    <string name="pref_key_listAscending">list_ascending</string>
 
-    <string name="tv_listItemTitle">Stac Pollaidh</string>
-    <string name="tv_listItem_static_distance">6.2 miles</string>
-    <string name="tv_listItem_static_distance2">3.2 miles</string>
-    <string name="tv_listItem_static_title2">Lochnagar</string>
-    <string name="tv_listItem_static_wpCount2">7 waypoints</string>
-    <string name="tv_listItem_static_wpCount">5 waypoints</string>
+    <!--    Intent extras-->
+    <string name="EXTRA_TITLE">"title"</string>
 
-    <string name="tv_guideView_wpCount">%1$s waypoints</string>
-    <string name="tv_guideView_distance">%1$s miles</string>
-    <string name="tv_guideView_wpPrevious_header">Previous waypoints:</string>
-    <string name="tv_guideView_wpNext_header">Next waypoint:</string>
-    <string name="tv_guideView_wpNext_distance">1.2 miles away</string>
-    <string name="btn_guideView_map">Show On Map</string>
-    <string name="btn_guideView_secret">Show Secret</string>
-    <string name="tv_guideView_title">Stac Pollaidh</string>
+    <!--    List item-->
+    <string name="tv_list_wpCount">%1$d waypoints</string>
+    <string name="tv_list_distance">%1$s miles</string>
 
+<!--    MainActivity-->
+    <string-array name="sp_main_order">
+        <item>Descending</item>
+        <item>Ascending</item>
+    </string-array>
+
+    <!--    GuideActivity-->
+    <string name="tv_guide_wpCount">%1$s waypoints</string>
+    <string name="tv_guide_distance">%1$s miles</string>
+    <string name="tv_guide_next_header">Next waypoint</string>
+    <string name="tv_guide_next_distance">1.2 miles away</string>
+    <string name="btn_guide_map">Show On Map</string>
+    <string name="tv_guide_previous_header">Previous waypoints</string>
+    <string name="btn_guide_secret">Show Secret</string>
+    <string name="btn_guide_delete">Delete Guide</string>
+
+    <!--    SecretActivity-->
     <string name="tv_secret_title">Waypoint 1</string>
     <string name="tv_secret_message">\"Facing the cairn, look to your left and descend the faint track for about 100 yards. You will find a spot beneath a rock outcropping sheltered from the wind to enjoy a quick snack.\"</string>
     <string name="btn_secret_share">View in Google Maps</string>
-
 
 </resources>

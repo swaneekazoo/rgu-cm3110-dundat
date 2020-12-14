@@ -6,40 +6,36 @@ import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
-@Entity(tableName = "guide")
+/**
+ * An ArrayList of Waypoints with an associated title.
+ * @author Adam Weir
+ */
+@Entity(tableName = "Guide")
 public class Guide {
     @NonNull
-    @PrimaryKey(autoGenerate = true)
-    private int id;
-//    private ArrayList<Waypoint> waypoints;
+    @PrimaryKey
     private String title;
-    private int wpCount;
-    private double distance;
+    private ArrayList<Waypoint> waypoints;
+//    private double distance;
 
-    public Guide(int id, String title, int wpCount, double distance) {
-        this.id = id;
+    public Guide(String title, ArrayList<Waypoint> waypoints) {
         this.title = title;
-        this.wpCount = wpCount;
-        this.distance = distance;
-    }
-
-    public int getId() {
-        return id;
+        this.waypoints = waypoints;
     }
 
     public String getTitle() {
         return title;
     }
 
+    public ArrayList<Waypoint> getWaypoints() {
+        return waypoints;
+    }
+
     public int getWpCount() {
-        return wpCount;
+        return waypoints.size();
     }
 
     public double getDistance() {
-        return distance;
+        return 5.6;
     }
-
-//    public void setWaypoints(ArrayList<Waypoint> waypoints) {
-//        this.waypoints = waypoints;
-//    }
 }
